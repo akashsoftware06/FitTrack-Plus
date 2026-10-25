@@ -1,0 +1,545 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f6f7fc;
+  color: #252640;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 245px;
+  padding: 30px 20px;
+  background: white;
+  border-right: 1px solid #ececf4;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.logo {
+  margin: 0 0 40px;
+  font-size: 27px;
+  font-weight: 800;
+  color: #7155e8;
+}
+
+.logo span {
+  color: #ff9d52;
+}
+
+.menu-label, .eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #9295aa;
+}
+
+.menu-label {
+  margin-bottom: 12px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 13px 14px;
+  margin: 4px 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #777b91;
+  text-align: left;
+}
+
+.nav-item.active {
+  color: #7155e8;
+  background: #f0edff;
+  font-weight: 700;
+}
+
+.sidebar-bottom {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #eeeef5;
+  font-size: 13px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #ebe6ff;
+  color: #7155e8;
+  font-weight: 800;
+}
+
+.sidebar-bottom p {
+  margin: 5px 0 0;
+  color: #9699aa;
+  font-size: 11px;
+}
+
+.main {
+  max-width: 1600px;
+  margin-left: 245px;
+  padding: 28px 36px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.topbar .eyebrow {
+  margin: 0 0 8px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.profile-button {
+  padding: 11px 16px;
+  border: 1px solid #e7e7f1;
+  border-radius: 10px;
+  background: white;
+  color: #42445b;
+}
+
+.welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+  margin-bottom: 25px;
+  border-radius: 18px;
+  color: white;
+  background: linear-gradient(120deg, #7357ef, #9a78f7);
+}
+
+.welcome .eyebrow {
+  color: #e4dcff;
+}
+
+.welcome h2 {
+  margin: 12px 0;
+  font-size: 25px;
+}
+
+.welcome p:last-child {
+  margin-bottom: 0;
+  color: #f0ebff;
+  font-size: 14px;
+}
+
+.welcome-icon {
+  font-size: 55px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  padding: 20px;
+  border: 1px solid #ededf5;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 4px 18px rgba(35, 30, 90, 0.03);
+}
+
+.stat-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+}
+
+.stat-icon.purple { background: #f0edff; }
+.stat-icon.green { background: #e6f9ef; }
+.stat-icon.orange { background: #fff1df; }
+.stat-icon.blue { background: #e7f2ff; }
+
+.stat-card p {
+  margin: 15px 0 7px;
+  color: #777b91;
+  font-size: 12px;
+}
+
+.stat-card h2 {
+  margin: 0 0 7px;
+  font-size: 27px;
+}
+
+.stat-card small {
+  color: #a0a2b2;
+  font-size: 10px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.section-heading h2 {
+  margin: 0 0 7px;
+  font-size: 21px;
+}
+
+.section-heading p {
+  margin: 0;
+  color: #888ba0;
+  font-size: 13px;
+}
+
+.primary-button {
+  border: 0;
+  border-radius: 9px;
+  padding: 12px 17px;
+  background: #7357ef;
+  color: white;
+  font-weight: 600;
+}
+
+.primary-button:hover {
+  background: #6043db;
+}
+
+.challenge-toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #e7e9f1;
+  border-radius: 9px;
+  background: white;
+  outline-color: #7357f5;
+}
+
+.refresh-button, .edit-button, .delete-button, .cancel-button {
+  padding: 10px 14px;
+  border: 1px solid #e7e9f1;
+  border-radius: 8px;
+  background: white;
+  color: #41465b;
+}
+
+.challenge-list {
+  display: grid;
+  gap: 15px;
+}
+
+.challenge-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px;
+  border: 1px solid #ededf5;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 4px 18px rgba(35, 30, 90, 0.03);
+}
+
+.challenge-icon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 14px;
+  background: #f0edff;
+  font-size: 25px;
+}
+
+.challenge-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.category {
+  color: #8b72ed;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.challenge-info h3 {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.challenge-info p {
+  margin: 5px 0;
+  color: #85899e;
+  font-size: 12px;
+}
+
+.difficulty {
+  display: inline-block;
+  margin-top: 7px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.difficulty-easy {
+  color: #16834a;
+  background: #e6f9ef;
+}
+
+.difficulty-medium {
+  color: #9a6100;
+  background: #fff1df;
+}
+
+.difficulty-hard {
+  color: #b42318;
+  background: #ffebe8;
+}
+
+.challenge-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.edit-button:hover, .refresh-button:hover, .cancel-button:hover {
+  background: #f0edff;
+}
+
+.delete-button {
+  color: #c62828;
+}
+
+.delete-button:hover {
+  background: #fff0ee;
+}
+
+.empty-state, .status-message {
+  text-align: center;
+  padding: 35px 20px;
+  color: #777d91;
+}
+
+.empty-state {
+  background: white;
+  border: 1px solid #eceef5;
+  border-radius: 14px;
+}
+
+.empty-state > div {
+  font-size: 38px;
+}
+
+.empty-state h3 {
+  color: #20243a;
+}
+
+.error-message {
+  padding: 12px 15px;
+  color: #b42318;
+  background: #fff0ee;
+  border-radius: 9px;
+  font-size: 13px;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  overflow-y: auto;
+  background: rgba(24, 26, 45, 0.55);
+}
+
+.challenge-form {
+  width: 100%;
+  max-width: 500px;
+  max-height: 92vh;
+  overflow-y: auto;
+  padding: 26px;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.challenge-form h2 {
+  margin: 0 0 8px;
+  color: #20243a;
+}
+
+.challenge-form > p {
+  margin: 0 0 22px;
+  color: #898ea1;
+  font-size: 13px;
+}
+
+.challenge-form label {
+  display: block;
+  margin: 14px 0 7px;
+  color: #41465b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.challenge-form input,
+.challenge-form textarea,
+.challenge-form select {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #e0e3ed;
+  border-radius: 8px;
+  background: white;
+  color: #20243a;
+  font-size: 13px;
+  outline-color: #7357f5;
+}
+
+.challenge-form textarea {
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+footer {
+  padding: 30px 0 10px;
+  color: #a0a2b2;
+  text-align: center;
+  font-size: 11px;
+}
+
+@media (max-width: 1100px) {
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 750px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .logo {
+    margin-bottom: 15px;
+  }
+
+  .menu-label, .sidebar-bottom {
+    display: none;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .nav-item {
+    width: auto;
+    padding: 10px;
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 20px 15px;
+  }
+
+  .topbar h1 {
+    font-size: 23px;
+  }
+
+  .welcome {
+    padding: 22px;
+  }
+
+  .welcome h2 {
+    font-size: 20px;
+  }
+
+  .welcome-icon {
+    font-size: 35px;
+  }
+
+  .challenge-card {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .challenge-info {
+    flex-basis: calc(100% - 75px);
+  }
+
+  .challenge-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 450px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .challenge-toolbar {
+    flex-direction: column;
+  }
+}
